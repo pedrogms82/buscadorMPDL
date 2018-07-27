@@ -1,0 +1,59 @@
+		<section class="category">
+			<div class="row">
+					<div class="col-md-2">
+					</div>
+			<div class="col-md-8 text-left">
+		        <div class="row">
+		          <div class="col-md-12">
+		            <ol class="breadcrumb">
+		              <li><a href="#">Principal</a></li>
+		              <li class="active">Números</li>
+		            </ol>
+		            <h1 class="page-title">Números</h1>
+		            <p class="page-subtitle">Estos son todos los números de Tiempo de Paz publicados hasta la fecha que ofrecemos de forma gratuita.</p>
+		          </div>
+		        </div>
+		        <div class="line"></div>
+		        <div class="row">
+		          <article class="col-md-12 article-list" *ngFor="let revista of revistas.rev_m">
+		            <div class="inner">
+		              <figure>
+										<a [routerLink]="['/revista', revista.id]">
+			                <img src="images/news/img01.jpg">
+		                </a>
+		              </figure>
+		              <div class="details">
+		                <div class="detail">
+		                <div class="time">Número:{{revista.num}} - {{revista.temporada}}</div>
+		                </div>
+		                <h1><a [routerLink]="['/revista', revista.id]">{{revista.name}}</a></h1>
+		                <p>{{revista.name}}</p>
+		                <footer>
+		                    <a class="btn btn-primary more" [routerLink]="['/revista', revista.id]">
+		                    <div>Leer más...</div>
+		                    <div><i class="ion-ios-arrow-thin-right"></i></div>
+		                  </a>
+		                </footer>
+		              </div>
+		            </div>
+		          </article>
+
+
+		          <div class="col-md-12 text-center">
+		            <ul class="pagination">
+		              <li class="prev"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
+		              <li class="active"><a href="#">1</a></li>
+		              <li><a href="#">2</a></li>
+		              <li><a href="#">3</a></li>
+		              <li><a href="#">...</a></li>
+		              <li><a href="#">97</a></li>
+		              <li class="next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+		            </ul>
+		            <div class="pagination-help-text">
+		            	Mostrando 8 resultados de 776 — Page 1
+		            </div>
+		          </div>
+		        </div>
+	</div>
+</div>
+</section>

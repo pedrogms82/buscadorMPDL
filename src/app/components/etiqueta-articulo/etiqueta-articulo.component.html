@@ -1,0 +1,38 @@
+<div class="search-result">
+  <div class="row">
+    <article *ngFor="let articulo of listaArticulos.art_r_m" class="col-md-12 article-list">
+      <div class="inner"  *ngIf="articulo.Estado=='VACIO'" >
+        No hay resultados
+      </div>
+      <div class="inner"  *ngIf="articulo.Estado!='VACIO'" >
+        <figure>
+          <a href="single.html">
+            <img src="../../assets/images/news/img01.jpg">
+          </a>
+        </figure>
+        <div class="details">
+          <div class="detail">
+            <div class="category">
+             <a href="category.html">{{articulo.rev_num}}</a>
+            </div>
+            <div class="time">{{articulo.rev_tem}}</div>
+          </div>
+          <h1><a [routerLink]="['/articulo', articulo.id]">{{ articulo.name }}</a></h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitat...
+          </p>
+          <footer>
+            <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>237</div></a>
+            <a class="btn btn-primary more" [routerLink]="['/articulo', articulo.id]">
+              <div>More</div>
+              <div><i class="ion-ios-arrow-thin-right"></i></div>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>

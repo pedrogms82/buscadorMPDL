@@ -1,0 +1,26 @@
+
+<form #loginForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+   <div class="row">
+     <div class="input-field col s6">
+       <i class="material-icons prefix">Usuario (email)</i>
+       <input type="text" #UserName ngModel name="UserName" placeholder="Usuario (email)" required>
+     </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">Contraseña</i><br>
+        <input type="password" #Password ngModel name="Password" placeholder="Contraseña" required>
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+          <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
+        </div>
+      </div>
+</form>
+<div *ngIf="isLoginError" class="red-text center error-message">
+    <i class="material-icons">error</i> Combinacion incorrecta de usuario y contraseña
+</div>
+<div class="row">
+    <div class="input-field col s12">
+      <button  class="btn-large btn-submit" (click)="Logout()"  type="submit">Logout</button>
+    </div>
+  </div>

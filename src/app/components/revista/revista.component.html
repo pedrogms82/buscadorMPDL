@@ -1,0 +1,25 @@
+<section class="first">
+<div class="row">
+  <div class="col-md-1">
+  </div>
+
+  <div class="col-md-10" *ngFor="let rev of revista.rev_m">
+    <h1>Número {{rev.num}}</h1>
+    <h3>
+      Nombre de la Revista: {{rev.name}}
+    </h3>
+    <h5>Temporada {{rev.temporada}}</h5>
+    </div>
+  <div class="col-md-1">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+      <app-revista-articulos-lista></app-revista-articulos-lista>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
+</section>

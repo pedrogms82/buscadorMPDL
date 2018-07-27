@@ -1,0 +1,31 @@
+<section class="first">
+<div class="row">
+  <div class="col-md-4">
+    <ul>
+      <li *ngFor="let etiqueta of etiqueta.eti_m" (click)="OnClickEtiqueta(etiqueta.id)">
+        <!-- <a [routerLink]="['/etiqueta', etiqueta.id]">{{etiqueta.id}} - {{etiqueta.name}}</a> -->
+        {{etiqueta.id}} - {{etiqueta.name}}
+      </li>
+    </ul>
+      <!-- <div class="col-md-offset-4 col-md-8" >
+        <div *ngFor="let etiqueta of etiqueta.eti_m">
+            <input type="checkbox" [(ngModel)]="etiqueta.checked" [checked]="etiqueta.checked" (click)="RevisaChecked()">
+              {{etiqueta.id}} - {{etiqueta.name}}
+        </div>
+     </div> -->
+  </div>
+  <div class="col-md-8">
+
+<div class="row">
+    <div class="col-md-10" *ngFor="let lista of listaArticulos">
+         <ul>
+           <li *ngFor="let art of lista.art_r_m">
+
+          {{art.rev_name}} <a [routerLink]="['/articulo', art.id]">{{art.name}}</a>
+           </li>
+         </ul>
+    </div>
+</div>
+  </div>
+</div>
+</section>

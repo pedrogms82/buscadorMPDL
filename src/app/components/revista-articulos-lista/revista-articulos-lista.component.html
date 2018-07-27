@@ -1,0 +1,8 @@
+<p>
+Articulos de la revista:
+</p>
+<ol>
+  <li *ngFor="let articulo of revistaArticulos.art_r_m">
+  <a [routerLink]="['/articulo', articulo.id]">{{ articulo.name }}</a>
+  </li>
+</ol>

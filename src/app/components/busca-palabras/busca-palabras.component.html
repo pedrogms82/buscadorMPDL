@@ -1,0 +1,48 @@
+<section class="first">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="col-md-4-offset col-md-8">
+          <input class="buscador-dch"  id="filtroPalabras"  [(ngModel)]="palabras" placeholder="Rellena tu busqueda.">
+          <input class="buscador-izq"  id="filtroPalabras"  [(ngModel)]="palabras" placeholder="Rellena tu busqueda.">
+          <button class="buscar-btn" (click)="OcBuscaPalabras()" name="Buscar">Buscar</button>
+
+          <br>
+
+
+        </div>
+      </div>
+      <div class="col-md-8">
+        Articulos encontrados:
+          <article *ngFor="let articulo of palabrasArticulos.art_r_m" class="col-md-12 article-list">
+            <div class="inner">
+              <figure>
+                <a href="single.html">
+                  <img src="../../assets/images/news/img01.jpg">
+                </a>
+              </figure>
+              <div class="details">
+                <div class="detail">
+                  <div class="category">
+                   <a href="category.html">{{articulo.rev_num}}</a>
+                  </div>
+                  <div class="time">{{articulo.rev.tem}}</div>
+                </div>
+                <h1><a [routerLink]="['/articulo', articulo.id]">{{ articulo.name }}</a></h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitat...
+                </p>
+                <footer>
+                  <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>237</div></a>
+                  <a class="btn btn-primary more" [routerLink]="['/articulo', articulo.id]">
+                    <div>More</div>
+                    <div><i class="ion-ios-arrow-thin-right"></i></div>
+                  </a>
+                </footer>
+              </div>
+            </div>
+          </article>
+      </div>
+    </div>
+<section>

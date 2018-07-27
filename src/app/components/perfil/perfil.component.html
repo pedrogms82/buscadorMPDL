@@ -1,0 +1,45 @@
+<section class="first">
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <b>Perfil de Usuario:</b>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Nombre:</label> <input class="form-control" type="text" [(ngModel)]="user.name" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+            <label>  Apellido 1: </label><input class="form-control" type="text" [(ngModel)]="user.ape_1" placeholder="Primer apellido" required>
+            </div>
+            <div class="form-group">
+            <label>  Apellido 2:</label> <input class="form-control" type="text" [(ngModel)]="user.ape_2" placeholder="Segundo apellido" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+            <label>
+              Email:</label>  <input class="form-control" type="text" [(ngModel)]="user.eml" placeholder="Correo Electrónico" required>
+            </div>
+            <div class="form-group">
+            <label>
+              Teléfono:</label>  <input class="form-control" type="text" [(ngModel)]="user.tlf" placeholder="Teléfono" required>
+            </div>
+            <div class="form-group">
+            <label>
+              NIF:</label>  <input class="form-control" type="text" [(ngModel)]="user.cif" placeholder="NIF" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group text-right">
+          <button class="btn btn-primary btn-block"  (click)="guardar()"  type="submit">Guardar</button>
+        </div>
+      </div>
+      <div class="col-md-2">
+      </div>
+  </div>
+ </div>
+</div>
+</section>

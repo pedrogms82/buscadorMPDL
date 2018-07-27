@@ -1,0 +1,13 @@
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <ul>
+        <li *ngFor="let revista of revistas.rev_m">
+          <a [routerLink]="['/revista', revista.id]">{{revista.id}} - {{revista.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>

@@ -1,0 +1,68 @@
+<section class="single">
+    <div class="row">
+				<div class="col-md-2">
+				</div>
+ 				<div class="col-md-8"  *ngFor="let art of articulo.art_r_m">
+						<ol class="breadcrumb">
+						  <li><a href="#">Home</a></li>
+						  <li class="active">{{art.rev_name}}</li>
+						</ol>
+						<article class="article main-article">
+							<header>
+								<h1>{{art.name}}</h1>
+								<ul class="details">
+									<li>{{art.rev_tem}}</li>
+									<li><a>{{art.rev_name}}</a></li>
+									<li>Autor: <a href="#">{{art.autor_m}}</a></li>
+								</ul>
+							</header>
+							<div class="main">
+								<div class="featured">
+
+									<figure>
+
+										<img src="../../assets/images/news/img01.jpg">
+										<figcaption>ALOHA</figcaption>
+									</figure>
+								</div>
+								<p class="entradilla">xxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+								<div [innerHTML]="art.html"></div>
+							</div>
+							<footer>
+								<div class="col">
+									<ul ng-class="tags" class="tags">
+										<li><a href="#">Etiqueta1</a></li>
+										<li><a href="#">Etiqueta1</a></li>
+										<li><a href="#">Etiqueta1</a></li>
+									</ul>
+								</div>
+							</footer>
+						</article>
+
+
+						<div class="sharing">
+						<!--Esto lo dejaría si logramos hacerlo funcionar, al menos FB, Twitter y Linkedin-->
+							<div class="title"><i class="ion-android-share-alt"></i>
+								Comparte este contenido en tus redes
+							</div>
+								<ul class="social">
+									<li>
+										<a href="#" class="facebook">
+											<i class="ion-social-facebook"></i> Facebook
+										</a>
+									</li>
+									<li>
+										<a href="#" class="twitter">
+											<i class="ion-social-twitter"></i> Twitter
+										</a>
+									</li>
+									<li>
+										<a href="#" class="linkedin">
+											<i class="ion-social-linkedin"></i> Linkedin
+										</a>
+									</li>
+								</ul>
+							</div>
+          </div>
+	</div>
+</section>

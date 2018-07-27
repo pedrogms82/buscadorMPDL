@@ -1,0 +1,33 @@
+	<div class="row">
+    <div class="col-md-1">
+    </div>
+		<div class="col-md-10" *ngFor="let art of articulo.art_r_m">
+			<h1>{{art.name}}</h1>
+			<h3>
+				Html Renderizado
+			</h3>
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8" [innerHTML]="art.html">
+
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+			<h3>
+				Codigo Html
+			</h3>
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+            {{art.html}}
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+		</div>
+    <div class="col-md-1">
+    </div>
+	</div>

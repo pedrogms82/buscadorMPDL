@@ -1,0 +1,117 @@
+<header class="primary">
+  <div class="firstbar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="brand">
+            <a href="index.html">
+              <img src="assets/images/logo-tdp-azul.png" alt="Magz Logo">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <form class="search" autocomplete="off">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Type something here">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary"><i class="ion-search"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="help-block">
+              <div>Buscar por etiqueta:</div>
+              <ul>
+                <li><a (click)="tagSearch(1)">Cooperación</a></li>
+                <li><a (click)="tagSearch(2)">Derechos Humanos</a></li>
+                <li><a (click)="tagSearch(3)">Economía</a></li>
+                <li><a (click)="tagSearch(4)">Educación</a></li>
+                <li><a (click)="tagSearch(5)">Medio Ambiente</a></li>
+                <li><a (click)="tagSearch(6)">Política</a></li>
+                <li><a (click)="tagSearch(7)">Relaciones Internacionales</a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3 col-sm-12 text-right">
+          <ul class="nav-icons">
+            <li><a *ngIf="!usuarioLogeado" [routerLink]="['registro']"><i class="ion-person-add"></i><div>Registro</div></a></li>
+            <li><a *ngIf="!usuarioLogeado" [routerLink]="['login']"><i class="ion-person"></i><div>Inicio</div></a></li>
+            <li><a *ngIf="usuarioLogeado" [routerLink]="['perfil']"><i class="ion-person-add"></i><div>Perfil</div></a></li>
+            <li><a *ngIf="usuarioLogeado" (click)="Logout()"><i class="ion-person"></i><div>Logout</div></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start nav -->
+  <nav class="menu">
+  <div class="container">
+    <div class="brand">
+      <a href="#">
+        <img src="assets/images/logo.png" alt="Magz Logo">
+      </a>
+    </div>
+    <div class="mobile-toggle">
+      <a href="#" data-toggle="menu" data-target="#menu-list"><i class="ion-navicon-round"></i></a>
+    </div>
+    <div class="mobile-toggle">
+      <a href="#" data-toggle="sidebar" data-target="#sidebar"><i class="ion-ios-arrow-left"></i></a>
+    </div>
+    <div id="menu-list">
+      <ul class="nav-list">
+        <li class="for-tablet nav-title"><a>Menu</a></li>
+        <li class="for-tablet"><a href="login.html">Login</a></li>
+        <li class="for-tablet"><a href="register.html">Register</a></li>
+        <li class="dropdown magz-dropdown"><a href="#">Funciones TDP <i class="ion-ios-arrow-right"></i></a>
+          <ul class="dropdown-menu">
+            <li class="nav"><a [routerLink]="['']">Inicio</a></li>
+            <li class="nav"><a [routerLink]="['revistas']">Revista</a></li>
+            <!-- <li class="nav"><a [routerLink]="['etiqueta']">Buscar etiqueta</a></li> -->
+            <li class="nav"><a [routerLink]="['buscar']">Buscar</a></li>
+            <li class="nav"><a [routerLink]="['login']">Login</a></li>
+            <li class="nav"><a [routerLink]="['registro']">Registro</a></li>
+            <li class="nav"><a [routerLink]="['perfil']">Perfil</a></li>
+          </ul>
+        </li>
+        <li class="dropdown magz-dropdown">
+          <a href="category.html">Pages <i class="ion-ios-arrow-right"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown magz-dropdown">
+              <a href="#">Authentication <i class="ion-ios-arrow-right"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="forgot.html">Forgot Password</a></li>
+                <li><a href="reset.html">Reset Password</a></li>
+              </ul>
+            </li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="single.html">Single</a></li>
+            <li><a href="page.html">Page</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="dropdown magz-dropdown">
+              <a href="#">Error <i class="ion-ios-arrow-right"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="403.html">403</a></li>
+                <li><a href="404.html">404</a></li>
+                <li><a href="500.html">500</a></li>
+                <li><a href="503.html">503</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown magz-dropdown"><a [routerLink]="['']">Inicio <i class="ion-ios-arrow-right"></i></a>
+        <li class="dropdown magz-dropdown"><a [routerLink]="['revistas']">Revista <i class="ion-ios-arrow-right"></i></a>
+        <li class="dropdown magz-dropdown"><a [routerLink]="['buscar']">Buscar articulos <i class="ion-ios-arrow-right"></i></a>
+        <li class="dropdown magz-dropdown"><a [routerLink]="['contacto']">Contacto <i class="ion-ios-arrow-right"></i></a>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End nav -->
+
+</header>

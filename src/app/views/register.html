@@ -1,0 +1,37 @@
+		<section class="login first grey">
+			<div class="container">
+				<div class="box-wrapper">
+					<div class="box box-border">
+						<div class="box-body" >
+							<h4>Registro</h4>
+								<form #registerForm="ngForm" class="col s12 white" (ngSubmit)="registro(Name.value, Eml.value, Cif.value, Pass.value)">
+								<div class="form-group">
+									<label>Nombre</label>
+									<input type="text" #Name ngModel name="name" class="form-control" required>
+								</div>
+								<div class="form-group">
+									<label>Email</label>
+									<input type="email" #Eml ngModel name="eml" class="form-control" required [ngStyle]="{'border-color' : emailColor}">
+									<div *ngIf="ErrorValidacion.email"><figcaption>Ya existe o es erroneo el email</figcaption></div>
+								</div>
+								<div class="form-group">
+									<label>DNI/NIE:</label>
+									<input type="text" #Cif ngModel name="cif" class="form-control" required [ngStyle]="{'border-color' : dniColor}">
+									<div *ngIf="ErrorValidacion.cif"><figcaption>Ya existe o es erroneo el DNI</figcaption></div>
+								</div>
+								<div class="form-group">
+									<label class="fw">Contraseña</label>
+									<input type="password" #Pass ngModel name="pass" class="form-control" required>
+								</div>
+								<div class="form-group text-right">
+									<button class="btn btn-primary btn-block" [disabled]="!registerForm.valid" type="submit">Regístrate</button>
+								</div>
+								<div class="form-group text-center">
+									<span class="text-muted">Ya tienes cuenta? Inicia sesión</span> <a [routerLink]="['/login']">Login</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

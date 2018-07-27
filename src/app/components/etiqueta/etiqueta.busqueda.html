@@ -1,0 +1,13 @@
+    <div class="form-group" *ngFor="let etiqueta of etiqueta.eti_m; let i = index">
+      <label><input type="checkbox" name="category"  (click)="OnClickEtiquetachecked(i)"> {{etiqueta.name}}</label>
+    </div>
+SearchCkecked
+
+<div class="input-group">
+  <div class="group-title">Filtrar</div>
+  <div class="input-group-btn">
+    <button class="btn btn-primary" (click)="SearchCkecked()">
+      <i class="ion-search"></i>
+    </button>
+  </div>
+</div>
