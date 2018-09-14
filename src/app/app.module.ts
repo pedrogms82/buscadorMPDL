@@ -2,7 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+//import { NgxCaptchaModule } from 'ngx-captcha';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+// import { ReCaptcha2Component } from '../../node_modules/ngx-captcha/public_api';
+
 
 import { AppComponent } from './app.component';
 import { RevistaComponent } from './components/revista/revista.component';
@@ -22,6 +26,8 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { RegistroComponent } from './components/user/registro/registro.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { SuscripcionComponent } from './components/suscripcion/suscripcion.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
+//import { RecaptchaComponent } from './components/recaptcha/recaptcha.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +48,18 @@ import { SuscripcionComponent } from './components/suscripcion/suscripcion.compo
     BusquedaComponent,
     RegistroComponent,
     ContactoComponent,
-    SuscripcionComponent
+    SuscripcionComponent,
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+  //  NgxCaptchaModule.forRoot({
+    //  reCaptcha2SiteKey: '6LdHfG4UAAAAAHHRLxUSpnLX-0Tg5pNgq1hYDJJ6', // optional, can be overridden with 'siteKey' component property
+  //  }),
   ],
   providers: [],
   bootstrap: [AppComponent]

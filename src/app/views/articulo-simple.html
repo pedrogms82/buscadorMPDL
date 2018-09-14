@@ -2,18 +2,18 @@
     <div class="row">
 				<div class="col-md-2">
 				</div>
- 				<div class="col-md-8"  *ngFor="let art of articulo.art_r_m">
+ 				<div class="col-md-8" >
 						<ol class="breadcrumb">
 						  <li><a href="#">Home</a></li>
-						  <li class="active">{{art.rev_name}}</li>
+						  <li class="active">{{articulo.rev_name}}</li>
 						</ol>
 						<article class="article main-article">
 							<header>
-								<h1>{{art.name}}</h1>
+								<h1>{{articulo.name}}</h1>
 								<ul class="details">
-									<li>{{art.rev_tem}}</li>
-									<li><a>{{art.rev_name}}</a></li>
-									<li>Autor: <a href="#">{{art.autor_m}}</a></li>
+									<li>{{articulo.rev_tem}}</li>
+									<li><a>{{articulo.rev_name}}</a></li>
+									<li>Autor: <a href="#">{{articulo.autor_m}}</a></li>
 								</ul>
 							</header>
 							<div class="main">
@@ -26,19 +26,49 @@
 									</figure>
 								</div>
 								<p class="entradilla">xxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-								<div [innerHTML]="art.html"></div>
-							</div>
+
+                <div *ngFor="let contenido of html.art_r_m">
+                  <div [innerHTML]="contenido.html"></div>
+							    </div>
+                </div>
 							<footer>
-								<div class="col">
-									<ul ng-class="tags" class="tags">
-										<li><a href="#">Etiqueta1</a></li>
-										<li><a href="#">Etiqueta1</a></li>
-										<li><a href="#">Etiqueta1</a></li>
-									</ul>
-								</div>
+                <div class="col">
+                  <ul ng-class="tags" class="tags">
+
+                    <li *ngFor="let etiqueta of etiquetasArticulo.etiquetas_en_articulo"  [ngSwitch]="etiqueta.id">
+                        <a href="#" *ngSwitchCase="1">Cooperación</a>
+
+                        <a href="#" *ngSwitchCase="2">Economía</a>
+
+                        <a href="#" *ngSwitchCase="3">Derechos Humanos</a>
+
+                        <a href="#" *ngSwitchCase="4">Educación</a>
+
+                        <a href="#" *ngSwitchCase="5">Medio Ambiente</a>
+
+                        <a href="#" *ngSwitchCase="6">Politica</a>
+
+                        <a href="#" *ngSwitchCase="7">Relaciones Internacionales</a>
+
+                        <a href="#" *ngSwitchCase="8">8</a>
+
+                        <a href="#" *ngSwitchCase="9">9</a>
+                   </li>
+                  </ul>
+                </div>
 							</footer>
 						</article>
-
+						<div class="favorito">
+              <i class="ion-star" (click)="OnClickMarcaFavorito()">
+                <!-- <input type="checkbox" [(ngModel)]="this.articulo.favorito"
+                ng-checked="this.articulo.favorito"
+                (change)="OnClickMarcaFavorito()"
+                style="margin-right: 10px"> -->
+                <span *ngIf="!this.articulo.favorito"> No esta marcado como Favorito</span>
+                <span *ngIf="this.articulo.favorito"> Si esta marcado como Favorito</span>
+                Favorito = {{ this.articulo.favorito }}
+              </i>
+            </div>
 
 						<div class="sharing">
 						<!--Esto lo dejaría si logramos hacerlo funcionar, al menos FB, Twitter y Linkedin-->

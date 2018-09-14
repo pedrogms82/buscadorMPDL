@@ -12,14 +12,18 @@ import { FooterComponent } from './components/footer/footer.component';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   templateUrl: './views/app.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: []
   // directives: [RevistaListaComponent, ROUTER_DIRECTIVES]
 })
 export class AppComponent {
   title = 'app';
+  public usuarioLogeado: boolean;
   constructor(
               private router : Router,
-              private route: ActivatedRoute){}
+              private route: ActivatedRoute){
+              this.usuarioLogeado = false;
+              }
 
   ngOnInit() {
         console.log("APP");

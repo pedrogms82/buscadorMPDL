@@ -12,14 +12,14 @@
         <div class="col-md-6 col-sm-12">
           <form class="search" autocomplete="off">
             <div class="form-group">
-              <div class="input-group">
+              <!-- <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Type something here">
                 <div class="input-group-btn">
                   <button class="btn btn-primary"><i class="ion-search"></i></button>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="help-block">
+            <!-- <div class="help-block">
               <div>Buscar por etiqueta:</div>
               <ul>
                 <li><a (click)="tagSearch(1)">Cooperación</a></li>
@@ -29,8 +29,9 @@
                 <li><a (click)="tagSearch(5)">Medio Ambiente</a></li>
                 <li><a (click)="tagSearch(6)">Política</a></li>
                 <li><a (click)="tagSearch(7)">Relaciones Internacionales</a></li>
+
               </ul>
-            </div>
+            </div> -->
           </form>
         </div>
         <div class="col-md-3 col-sm-12 text-right">
@@ -104,10 +105,15 @@
             </li>
           </ul>
         </li>
-        <li class="dropdown magz-dropdown"><a [routerLink]="['']">Inicio <i class="ion-ios-arrow-right"></i></a>
-        <li class="dropdown magz-dropdown"><a [routerLink]="['revistas']">Revista <i class="ion-ios-arrow-right"></i></a>
-        <li class="dropdown magz-dropdown"><a [routerLink]="['buscar']">Buscar articulos <i class="ion-ios-arrow-right"></i></a>
-        <li class="dropdown magz-dropdown"><a [routerLink]="['contacto']">Contacto <i class="ion-ios-arrow-right"></i></a>
+        <li class="dropdown magz-dropdown"><a [routerLink]="['']">Inicio <i class="ion-ios-arrow-right"></i></a></li>
+        <li class="dropdown magz-dropdown"><a [routerLink]="['revistas']">Revista <i class="ion-ios-arrow-right"></i></a></li>
+        <li class="dropdown magz-dropdown"><a [routerLink]="['buscar']">Buscar articulos <i class="ion-ios-arrow-right"></i></a></li>
+        <li class="dropdown magz-dropdown"><a [routerLink]="['contacto']">Contacto <i class="ion-ios-arrow-right"></i></a></li>
+          <li class="dropdown magz-dropdown"><a *ngIf="!usuarioLogeado" [routerLink]="['registro']">Registro<i class="ion-person-add"></i></a></li>
+          <li class="dropdown magz-dropdown"><a *ngIf="!usuarioLogeado" [routerLink]="['login']">Inicio<i class="ion-person"></i></a></li>
+          <li class="dropdown magz-dropdown"><a *ngIf="usuarioLogeado" [routerLink]="['perfil']">Perfil<i class="ion-person-add"></i></a></li>
+          <li class="dropdown magz-dropdown"><a *ngIf="usuarioLogeado" [routerLink]="['favoritos']">Favoritos</a></li>
+          <li class="dropdown magz-dropdown"><a *ngIf="usuarioLogeado" (click)="Logout()">Logout<i class="ion-person"></i></a></li>
       </ul>
     </div>
   </div>

@@ -10,6 +10,7 @@ import { RevistaApiService } from '../../services/revista-api.service';
   styleUrls: ['./nav.component.css'],
     providers:[RevistaApiService]
 })
+
 export class NavComponent implements OnInit {
 
   public usuarioLogeado: boolean = false;
@@ -62,8 +63,10 @@ export class NavComponent implements OnInit {
     //   )
     //         this.router.navigate(['/buscar'], this.listaArticulos );
     //         this.articulosOutput = this.listaArticulos;
-    // this.router.navigate(['/buscar']);
-    this.router.navigate(['/etiqueta/'+tag]);
+    this.router.navigate(['/buscar', tag]);
+
+    //[routerLink]="['/revista', revista.id]"
+    // this.router.navigate(['/etiqueta/'+tag]);
     this.pageRefresh();
   }
 

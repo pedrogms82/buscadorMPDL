@@ -6,7 +6,7 @@
       </div>
       <div class="col-md-8">
         <b>Perfil de Usuario:</b>
-        <div class="row">
+        <div class="row" *ngIf="user">
           <div class="col-md-6">
             <div class="form-group">
               <label>Nombre:</label> <input class="form-control" type="text" [(ngModel)]="user.name" placeholder="Nombre" required>
@@ -32,7 +32,49 @@
               NIF:</label>  <input class="form-control" type="text" [(ngModel)]="user.cif" placeholder="NIF" required>
             </div>
           </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Dirección:</label>  <input class="form-control" type="text" [(ngModel)]="user.dir" placeholder="Dirección">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Localidad:</label>  <input class="form-control" type="text" [(ngModel)]="user.loc" placeholder="Localidad">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Código Postal:</label>  <input class="form-control" type="text" [(ngModel)]="user.cps" placeholder="Código Postal">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="checkbox" [(ngModel)]="user.passChange" placeholder="Cambio de contraseña" style="margin-right: 10px">
+              <label> Deseo cambiar la contraseña</label>
+            </div>
+          </div>
+          <div class="col-md-12" *ngIf="user.passChange">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Contraseña actual</label>  <input class="form-control" type="text" [(ngModel)]="user.pass" placeholder="Contraseña">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Contraseña Nueva:</label>  <input class="form-control" type="text" [(ngModel)]="user.pass1" placeholder="Contraseña">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Repite contraseña</label>  <input class="form-control" type="text" [(ngModel)]="user.pass2" placeholder="Contraseña">
+              </div>
+            </div>
+            <div class="col-md-4" *ngIf="user.badPass">Las contraseñano es correcta</div>
+            <div class="col-md-8" *ngIf="user.wrgPass">Las contraseñas no coinciden</div>
+          </div>
         </div>
+
+
         <div class="form-group text-right">
           <button class="btn btn-primary btn-block"  (click)="guardar()"  type="submit">Guardar</button>
         </div>

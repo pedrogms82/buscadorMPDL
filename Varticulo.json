@@ -1,0 +1,24 @@
+{
+	"count": 1,
+	"total_count": 1,
+	"art_r_m": [
+		{
+			"id": 1,
+			"name": "Jun La Unión Europea debe actuar con urgencia",
+			"num": 1,
+			"dsc": "",
+			"img": "",
+			"rev": 1,
+			"off": false,
+			"off_usr": 0,
+			"off_tim": "1970-01-01T00:00:00.000Z",
+			"html": "<div class=\\\"container\\\">\n\t<header>\n\n\n\t\t<h1>Ejemplo web responsive</h1>\n\t<header>\n \n\t<nav>\n\t\t<ul>\n\t\t\t<li>menu 1</li>\n\t\t\t<li>menu 2</li>\n\t\t\t<li>menu 3</li>\n\t\t\t<li>menu 4</li>\n\t\t</ul>\n\t\t<ul>\n\t\t\t<li>menu 5</li>\n\t\t\t<li>menu 6</li>\n\t\t\t<li>menu 7</li>\n\t\t\t<li>menu 8</li>\n\t\t</ul>\n\t</nav>\n \n\t<section>\n\t\t<p>\n\t\t\t<b>&lt;meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\" /&gt;</b>\n\t\t\t<br>Este meta tag se utiliza para controlar cómo aparecerá el contenido HTML en los navegadores móviles. Así nos aseguramos que el contenido se ajusta al ancho del dispositivo. En este caso estamos indicando que el contenido tendrá el ancho del dispositivo y que la escala inicial es de 1\n\t\t</p>\n \n\t\t<p>\n\t\t\tLa expresión <b>@media</b> de css3, es fundamental. Nos permite estableces condiciones desde CSS para conocer el dispositivo desde el se accede a nuestra web y aplicar nuevos estilos CSS. Por ejemplo: podemos eliminar el sidebar de nuestro blog si el navegador mide menos de 600px.\n\t\t\t<br>Tenéis la info más detallada en: http://www.w3.org/TR/css3-mediaqueries/\n\t\t\t<p>\n\t\t\t\tLas propiedades que más nos interesan son las siguientes:\n\t\t\t\t<ul>\n\t\t\t\t\ta) <b>width y height</b> Ancho y alto del navegador (podemos añadir el prefijo min- o max-)\n\t\t\t\t\t<br>b) <b>width y height</b> Ancho y alto del dispositivo, móviles y tablets (podemos añadir el prefijo min- o max- )\n\t\t\t\t\t<br>c) <b>orientation</b> Orientación del móvil o tablet (para panorámico utilizaremos orientation:portrait, para vertical orientation:landscape)\n\t\t\t\t</ul>\n\t\t\t</p>\n \n\t\t\t<p>\n\t\t\t\t<b>@media screen and (max-width:980px)</b> Se utiliza para definir un tamaño o inferior. En este caso, para 980px o menos.\n\t\t\t</p>\n\t\t</p>\n\t</section>\n\t<aside>Aside</aside>\n \n\t<footer>\n\t\t<a href=\\\"http://www.lawebdelprogramador.com\\\">http://www.lawebdelprogramador.com</a>\n\t</footer>\n</div>",
+			"rev_name": "Prevención y consecuencias del cambio cl",
+			"rev_num": "128",
+			"rev_tem": "PRIMAVERA 2018",
+			"suscriptor": false,
+			"autor_m": 1,
+			"num_vis": 125
+		}
+	]
+}

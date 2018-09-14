@@ -20,15 +20,20 @@ export class BusquedaComponent implements OnInit {
   public etiqueta: any =[];
   public etiquetaArticulos: any =[];
   public etiquetaBuscar: any = [];
+  public tag : any;
 
   constructor(private revistaApiService: RevistaApiService,
               private route: ActivatedRoute) {
+        this.route.params.subscribe( params => this.tag = params.tag );
+
+
    }
 
   ngOnInit() {
     this.showEtiquetas();
     console.log("Lista de etiquetas", this.etiqueta);
-    console.log("input" , this.inputArticulos)
+    // this.etiqueta.eti_m[this.tag].checked;
+
   }
 
   public OcBuscaPalabras(){

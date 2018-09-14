@@ -4141,3 +4141,20 @@ blockquote {
      text-align: center;
      color: #686868;
  }
+
+
+/** **/
+
+.error-message p{
+  color: #ffffff;
+  background-color: #df1e04;
+  border-color:  #df1e04;
+  font-size: 15px;
+  border-radius: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  letter-spacing: .5px;
+}

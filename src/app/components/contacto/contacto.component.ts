@@ -16,19 +16,24 @@ export class ContactoComponent implements OnInit {
 
   ngOnInit() {
     console.log("Pagina de contacto");
+
+    console.log(this.message);
   }
 
   enviarEmail(message: IMessage) {
-    this.mailingService.sendEmail(message).subscribe(
+    //setTimeout(console.log("4 seconds"),4000);
+    console.log(this.message);
+    this.mailingService.sendEmail(message);
+    /*.then(
         result => {
         console.log('AppComponent Success', result);
-                setTimeout(alert("4 seconds"),4000);
+                setTimeout(console.log("4 seconds"),4000);
       },
         error => {
         console.log('Sending email got error', error);
-                setTimeout(alert("4 seconds"),4000);
+                setTimeout(console.log("4 seconds"),4000);
 
-      });
-      setTimeout(alert("4 seconds"),4000);
+      });*/
+    //  setTimeout(alert("4 seconds"),4000);
   }
 }

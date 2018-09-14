@@ -3,16 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Response } from "@angular/http";
 import { Observable } from 'rxjs';
 import { UsuarioRegistroModel } from '../../models/usuario.model';
-// import 'rxjs/add/operator/map';
-//import { User } from './user.model';
-//import { map } from "rxjs/operators";
-//import 'rxjs/add/operator/map';
-
 
 @Injectable()
 export class UserService {
   readonly rootUrl = 'http://freeapp.ayudapyme.es';
-
 
   private token: string = "";
   public showlogeado:boolean = false;
@@ -22,7 +16,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  registerUser(user: any) {
+  public registerUser(user: any) {
     const body = {
       UserName: user.UserName,
       Password: user.Password,
@@ -34,18 +28,18 @@ export class UserService {
     return this.http.post(this.rootUrl + '/api/User/Register', body,{headers : this.reqHeader});
   }
 
-  userAuthentication(UserName, password) {
-    var data = "email=" + UserName + "&pass=" + password;// + "&grant_type=password"
-  //  var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded','No-Auth':'True','Access-Control-Allow-Origin': '*' });
-    console.log("POST:", this.rootUrl + '/login?'+data);
-    return  this.http.post(this.rootUrl + '/login?'+data, data,{ headers: this.reqHeader } );
-    //let response = this.http.get(this.rootUrl + 'login?EMAIL=capi@mpdl.org&PASS=1' );
-    //let response ='{ "token" : "4E07408562BEDB8B60CE05C1DECFE3AD16B72230967DE01F640B7E4729B49FCE", "email" : "capi@mpdl.org", "Nombre" : "Pedro", "Apellidos":"García Montes", "Dirección": "Calle Martos 15" }';
-    // return response;
+  // Si es correcto devolvemos solo el token TdpToken
+  public userAuthentication(UserName, password) {
+    var data = "email=" + UserName + "&pass=" + password;
+
+    console.log("POST:", this.rootUrl + '/API_LOGIN?'+data);
+    return  this.http.post(this.rootUrl + '/API_LOGIN?'+data, data,{ headers: this.reqHeader } );
+
   }
 
-  getUserClaims(){
-   return  this.http.get(this.rootUrl+'/api/GetUserClaims');
+  public getUserData(TdpToken){
+    console.log("GET: ",this.rootUrl+'/API_GET_USER_DATA?TOKEN='+TdpToken);
+   return  this.http.get(this.rootUrl+'/API_GET_USER_DATA?TOKEN='+TdpToken);
   }
 
   // public guardarUsuario(user: any){ // Swagger
@@ -68,15 +62,15 @@ export class UserService {
 
       var userData = "eml=" + user.eml.toUpperCase() + "&pass=" + user.pass + "&cif=" + user.cif + "&name=" + user.name;
 
-      console.log('http://freeapp.ayudapyme.es/webregistro?'+userData);
+      console.log('http://freeapp.ayudapyme.es/API_REG_USR?'+userData);
 
       return this.http.post(
-      'http://freeapp.ayudapyme.es/webregistro?'+userData,
+      'http://freeapp.ayudapyme.es/API_REG_USR?'+userData,
       { headers: this.reqHeader });
 
   }
 
-  public guardarUsuario(user: any){ // Swagger
+  public guardarUsuario(user: any, userToken: any){ // Swagger
 
 
       var userData = "eml=" + user.eml.toUpperCase()
@@ -84,16 +78,29 @@ export class UserService {
         + "&name=" + user.name
          + "&ape_1=" + user.ape_1
           + "&ape_2=" + user.ape_2
-           + "&tlf=" + user.tlf;
+           + "&tlf=" + user.tlf
+            + "&dir=" + user.dir
+             + "&loc=" + user.loc
+              + "&cps=" + user.cps
+               + "&TOKEN=" + userToken;
 
-      console.log('http://freeapp.ayudapyme.es/mod_user?'+userData);
+      console.log('http://freeapp.ayudapyme.es/API_MOD_USR?'+userData);
 
-      return this.http.post(
-      'http://freeapp.ayudapyme.es/mod_user?'+userData,
-      { headers: this.reqHeader });
+      return this.http.post('http://freeapp.ayudapyme.es/API_MOD_USR?'+userData, { headers: this.reqHeader });
 
   }
 
+  public cambiarPassUsuario (user: any, userToken: any){ // Swagger
 
+
+      var userData = "pass=" + user.pass
+                      + "newpass=" + user.newPass
+                        + "&TOKEN=" + userToken;
+
+      console.log('http://freeapp.ayudapyme.es/API_MOD_PAS_USR?'+userData);
+
+      return this.http.post('http://freeapp.ayudapyme.es/API_MOD_PAS_USR?'+userData, { headers: this.reqHeader });
+
+  }
 
 }

@@ -14,6 +14,8 @@ import { RegistroComponent } from '../components/user/registro/registro.componen
 import { PerfilComponent } from '../components/perfil/perfil.component';
 import { HomeComponent } from '../components/home/home.component';
 import { ContactoComponent } from '../components/contacto/contacto.component';
+//import { RecaptchaComponent } from '../components/recaptcha/recaptcha.component';
+import { FavoritosComponent } from '../components/favoritos/favoritos.component';
 
 const routes: Routes = [
   { path: 'revistas', component: RevistaListaComponent },
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: 'favoritos', component: FavoritosComponent },  
+//  { path: 'recaptcha', component: RecaptchaComponent },
   { path: '', component: HomeComponent }
 ];
 
